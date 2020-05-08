@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+}
+
+.value {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.x-value {
+  color: red;
+}
+
+.o-value {
+  color: blue;
+}

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders cell 1`] = `
+<div
+  className="cell"
+  onClick={[Function]}
+>
+  <span
+    className="value x-value"
+  >
+    X
+  </span>
+</div>
+`;

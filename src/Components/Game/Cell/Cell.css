@@ -1,0 +1,15 @@
+.cell {
+  height: 50px;
+  flex: 0 0 50px;
+  background-color: #dddddd;
+  border: 1px solid black;
+  padding: 0;
+  table-layout: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell:hover {
+  background-color: #e7e7e7;
+}
