@@ -1,0 +1,29 @@
+.header > .value {
+  width: 125px;
+}
+
+.header {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding-left: 50px;
+  width: 100%;
+  flex: 0 0 50px;
+  z-index: 3;
+  background-color: white;
+  border-bottom: 2px solid brown;
+}
+
+.header-button {
+  font-size: 16px;
+}
+
+.turn,
+.has-winner {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.has-winner {
+  margin-left: 300px;
+}

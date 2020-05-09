@@ -1,5 +1,5 @@
-import {TBoardState} from 'Reducers/Reducers';
-import {EValue} from 'Consts/GameConsts';
+import { TBoardState } from "Reducers/Reducers";
+import { EValue } from "Consts/GameConsts";
 
 /**
  * Возвращает функцию, которая, пока она продолжает вызываться,
@@ -39,15 +39,16 @@ function debounce(func: Function, wait: number, immediate?: boolean) {
  * @param {number} x Координата х последнего хода.
  * @param {number} y Координата y последнего хода.
  */
-function checkWin( board: TBoardState, x: number, y:number ): boolean{
-  let newFig = getFig(board, x,y);
-  if( ! newFig ) return false;
-  
-  return checkLine(board, newFig, x, y, 1, 0 ) || //горизонталь
-         checkLine(board, newFig, x, y, 0, 1 ) || //вертикаль
-         checkLine(board, newFig, x, y, 1, 1 ) || //диагональ 45
-         checkLine(board, newFig, x, y, 1, -1 ); //диагональ 135		
-  
+function checkWin(board: TBoardState, x: number, y: number): boolean {
+  let newFig = getFig(board, x, y);
+  if (!newFig) return false;
+
+  return (
+    checkLine(board, newFig, x, y, 1, 0) || //горизонталь
+    checkLine(board, newFig, x, y, 0, 1) || //вертикаль
+    checkLine(board, newFig, x, y, 1, 1) || //диагональ 45
+    checkLine(board, newFig, x, y, 1, -1)
+  ); //диагональ 135
 }
 
 /**
@@ -59,21 +60,25 @@ function checkWin( board: TBoardState, x: number, y:number ): boolean{
  * @param {number} dx Изменение по координате х для задания направления.
  * @param {number} dy Изменение по координате y для задания направления.
  */
-function checkLine(board: TBoardState, value: EValue, x: number, y: number, dx: number, dy: number): boolean {
-  x = +x;
-  y = +y;
+function checkLine(
+  board: TBoardState,
+  value: EValue,
+  x: number,
+  y: number,
+  dx: number,
+  dy: number
+): boolean {
   let score = 0;
-  while( getFig(board, x - dx, y - dy ) === value ){
+  while (getFig(board, x - dx, y - dy) === value) {
     x -= dx;
     y -= dy;
   }
-  while( getFig( board,x, y ) === value ){
+  while (getFig(board, x, y) === value) {
     x += dx;
     y += dy;
     score++;
   }
   return score >= 5;
-
 }
 
 /**
@@ -82,7 +87,7 @@ function checkLine(board: TBoardState, value: EValue, x: number, y: number, dx: 
  * @param {number} x Координата х клетки.
  * @param {number} y Координата y клетки.
  */
-function getFig( board: TBoardState, x: number, y:number ): EValue {
+function getFig(board: TBoardState, x: number, y: number): EValue {
   return board[[x, y].toString()];
 }
 

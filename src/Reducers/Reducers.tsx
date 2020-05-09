@@ -1,6 +1,6 @@
-import {GAME_ACTION, TGameActions} from 'Consts/ActionTypes';
-import {EValue} from 'Consts/GameConsts';
-import {checkWin} from 'Utils/Utils';
+import { GAME_ACTION, TGameActions } from "Consts/ActionTypes";
+import { EValue } from "Consts/GameConsts";
+import { checkWin } from "Utils/Utils";
 
 /**
  * Состояние игры.
@@ -10,8 +10,8 @@ import {checkWin} from 'Utils/Utils';
  */
 export interface IGameState {
   board: TBoardState;
-  turn: EValue,
-  hasWinner: boolean
+  turn: EValue;
+  hasWinner: boolean;
 }
 
 /**
@@ -29,7 +29,7 @@ export type TBoardState = {
 const initialState: IGameState = {
   board: {},
   turn: EValue.X,
-  hasWinner: false
+  hasWinner: false,
 };
 
 /**
@@ -49,7 +49,11 @@ export const gameReducer = (
 
       // Проверка на первый ход игры.
       if (cell[0] === 0 && cell[1] === 0) {
-        return {...initialState, board: {[cell.toString()]: EValue.X}, turn: EValue.O};
+        return {
+          ...initialState,
+          board: { [cell.toString()]: EValue.X },
+          turn: EValue.O,
+        };
       }
 
       //проверка, что хода в эту клетку еще не было.
@@ -59,7 +63,11 @@ export const gameReducer = (
 
       const board = { ...state.board, [cell.toString()]: state.turn };
       const hasWinner = checkWin(board, cell[0], cell[1]);
-      const newTurn = hasWinner ? state.turn : state.turn === EValue.X ? EValue.O : EValue.X;
+      const newTurn = hasWinner
+        ? state.turn
+        : state.turn === EValue.X
+        ? EValue.O
+        : EValue.X;
       return { ...state, board, turn: newTurn, hasWinner };
   }
   return initialState;

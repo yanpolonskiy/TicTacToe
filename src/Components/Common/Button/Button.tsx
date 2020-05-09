@@ -2,9 +2,8 @@ import React from "react";
 import "./Button.css";
 
 /**
- *
- * @param props
- * @constructor
+ * Компоненты рисующий кнопку.
+ * @param {React.HTMLProps<HTMLButtonElement>} props Пропсы для передачи в кнопку.
  */
 export const Button = (props: React.HTMLProps<HTMLButtonElement>) => {
   const className = "button " + (props.className ? props.className : "");
