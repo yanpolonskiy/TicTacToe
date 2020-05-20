@@ -1,31 +1,13 @@
 Тестовое задание СТС.
 Чтобы пропустить настройку брал create react app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Сделать игру в крестики-нолики на одном экране
+∙ Поле бесконечное
+∙ Ходы поочередные
+∙ Первый ход за крестиками и всегда в клетку с координатой (0,0)
+∙ Условие победы – [C] крестиков/ноликов в ряд по горизонтали, вертикали или диагонали. C – произвольный параметр, предусмотреть управление этим параметром при сборке проекта.
+∙ Стек – Typescript, React, Redux.
+∙ В Redux должен быть ровно 1 Action. Кол-во редюсеров не ограничено, но приветствуются оптимальные решения
+∙ Размер клетки поля по желанию, масштабированием и скроллингом можно пренебречь, считаем, что игра закончится на одном экране. Но будет плюсом, если поле будет действительно бесконечно
+∙ В идеале – юнит-тесты на редюсеры и компоненты, хотя бы по 1.
+∙ Все остальные детали – на усмотрение разработчика. Мы хотим видеть структуру, качество и эффективность кода.
